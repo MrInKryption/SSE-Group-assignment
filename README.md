@@ -1,2 +1,17 @@
-# SSE-Group-assignment
-Group assignment for SSE
+# SSE Web-Based Voting Application
+By Group 13:
+* Kim Chau
+* Daniel Cotton
+* My-Thuyen Ha
+* Raymond Habis
+* Brett Shelley - a1645904
+
+## Prerequisites
+* .NetCore 2.2
+
+## Instructions
+1. Navigate to repo's folder.
+2. Run ```dotnet restore``` if this is the first time running the application.
+3. Run ```dotnet run```.
+4. Enter ```https://localhost:5001``` into the URL of your browser.
+5. Done!
