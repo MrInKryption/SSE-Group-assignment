@@ -1,8 +1,8 @@
 # SSE Web-Based Voting Application
 By Group 13:
-* Kim Chau
-* Daniel Cotton
-* My-Thuyen Ha
+* Kim Chau -
+* Daniel Cotton -
+* My-Thuyen Ha - a1706647
 * Raymond Habis - a1631834
 * Brett Shelley - a1645904
 
