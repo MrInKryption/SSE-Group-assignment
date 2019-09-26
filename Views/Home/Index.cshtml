@@ -2,7 +2,63 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row" style="margin-top:16em">
+    <div class="col-md-6 offset-md-3">
+        <div class="card card-nav-tabs">
+            <div class="card-header card-header-primary">
+                <h2 class="card-title" style="font-family:'Quicksand',sans-serif;margin-bottom:0px;font-size:24px">Online Voting Login</h2>
+            </div>
+            <div class="card-body">
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating" for="Login" style="font-family:'Quicksand',sans-serif">Account ID:</label>
+                            <input id="Login" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating" for="Login" style="font-family:'Quicksand',sans-serif">Password:</label>
+                            <input id="Password" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="LoginBtn" type="button" class="btn btn-success btn-block">Login</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="ErrorLogin" style="display:none;color:red;font-family:'Quicksand',sans-serif">Invalid Login!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts
+{
+    <script>
+        $("#LoginBtn").click(function () {
+            $.post("/Home/CheckLogin", { login: $("#Login").val(), password: $("#Password").val() }).done(function (res) {
+                $("#ErrorLogin").slideUp();
+                if (res == "Voter") {
+
+                }
+                else if (res == "Admin") {
+                    window.location.href = "/Admin/Index";
+                }
+                else {
+                    $("#ErrorLogin").slideDown();
+                }
+            });
+        });
+    </script>
+}
